@@ -1,0 +1,398 @@
+/*! ALL*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto;
+}
+
+/* Tło strony głównej */
+.background {
+  background-image: url('img/1600w-JM-eZxiL-W0.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 50px;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
+       url('fonts/PlayfairDisplay-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/*! HEADER*/
+.header {
+  background-color: rgb(241, 226, 206);
+  width: 100%;
+  height: 110px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ustawienie wysokiego z-indexu, jeśli to konieczne */
+  border-bottom: 1px solid rgb(141, 126, 106);
+}
+
+.left {
+  width: 350px;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.header-center {
+  display: flex;
+  margin-left: 0px;
+  margin-right: 0px;
+  min-width: 400px;
+  max-width: 500px;
+  align-items: center;
+  background-color: rgb(201, 167, 140);
+  border-radius: 15px;
+  height: 100px;
+  margin-top: 5px;
+  transition: 0.4s;
+}
+
+.right {
+  width: 350px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.profile {
+  background-color: rgb(201, 167, 140);
+  width: 80px;
+  height: 80px;
+  border-radius: 25%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 25px;
+  margin-right: 15px;
+  font-size: 2rem;
+  transition: 0.4s;
+}
+
+.favorite {
+  background-color: rgb(201, 167, 140);
+  width: 80px;
+  height: 80px;
+  border-radius: 25%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 15px;
+  font-size: 2rem;
+  transition: 0.4s;
+}
+
+.upload {
+  background-color: rgb(201, 167, 140);
+  width: 80px;
+  height: 80px;
+  border-radius: 25%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 15px;
+  font-size: 2rem;
+  transition: 0.4s;
+}
+
+.logo {
+  font-family: "Playwrite US Modern", cursive;
+  font-size: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ustalamy wysokość dla centrowania pionowego */
+  margin: 103px; /* Resetujemy margines, jeśli to konieczne */
+  padding: 0; /* Resetujemy padding, jeśli to konieczne */
+}
+
+.search {
+  width: 256px; /* Szerokość search + 2 * padding 3px */
+  height: 61px; /* Wysokość search + 2 * padding 3px */
+  padding: 3px;
+  border-radius: 20px;
+  background-color: rgb(141, 126, 106);
+  margin-left: 20px;
+  box-sizing: border-box;
+  transition: width 0.4s, height 0.4s; /* Dodanie animacji przejścia */
+}
+
+.search:hover {
+  width: 276px; /* Powiększenie o 20px */
+  height: 81px; /* Powiększenie o 20px */
+}
+
+.search-bar {
+  width: 250px;
+  height: 55px;
+  border-radius: 18px;
+  border: none;
+  font-size: 25px;
+  text-align: center;
+  transition: width 0.4s, height 0.4s; /* Dodanie animacji przejścia */
+}
+
+.search-bar:hover {
+  width: 270px; /* Powiększenie o 20px */
+  height: 75px; /* Powiększenie o 20px */
+}
+
+.search-button {
+  height: 55px;
+  width: 55px;
+  border-radius: 20px;
+  border-width: 0px;
+  background-color: rgb(201, 167, 140);
+  margin-right: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.header-center:hover, .search-button:hover, .profile:hover, .favorite:hover, .upload:hover {
+  box-shadow: 5px 5px 10px black;
+}
+
+.header-center:hover {
+  transform: scale(1.1);
+}
+
+.profile,
+.favorite,
+.upload {
+  display: inline-block; /* Aby tooltip wyświetlał się pod <p> */
+  margin-right: 10px; /* Dla odstępu między elementami */
+  text-align: center;
+}
+
+.profile p,
+.favorite p,
+.upload p {
+  font-size: 2rem; /* Dla emoji */
+  cursor: pointer;
+  margin-bottom: -13px;
+  margin-top: 13px;
+}
+
+.profile span,
+.favorite span,
+.upload span {
+  font-family: "Playwrite US Modern", cursive;
+  font-size: 15px; /* Dla emoji */
+  cursor: pointer;
+}
+
+/*! CONTENT*/
+/* Stylizacja głównego kontenera */
+.center {
+  margin-top: 100px; /* Zwiększony margines na górę, aby uniknąć zakrywania przez nagłówek */
+  display: grid;
+  grid-template-columns: 1fr; /* Jedna kolumna */
+  gap: 40px;
+  max-width: 1200px;
+  padding: 20px;
+  justify-items: center; /* Wycentrowanie elementów w osi X */
+}
+
+/* Stylizacja poszczególnych głównych elementów */
+.main {
+  background-color: rgba(255, 252, 241, 0.8);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Pełna szerokość */
+  max-width: 600px; /* Maksymalna szerokość dla elementów .main */
+}
+
+
+.user-name {
+  font-size: 25px; /* Rozmiar czcionki */
+  font-weight: bold; /* Pogrubienie tekstu */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.img {
+  display: flex; /* Flexbox */
+  justify-content: center; /* Wycentrowanie tekstu */
+  align-items: center; /* Wycentrowanie tekstu */
+  width: 100%; /* Pełna szerokość */
+  background-color: rgba(255, 252, 237, 0.8); /* Przezroczyste tło */
+  border-radius: 15px; /* Zaokrąglenie rogów */
+  overflow: hidden; /* Ukrywanie elementów wyjściowych */
+}
+
+.img img {
+  min-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+  filter: contrast(1.2); /* Zwiększenie kontrastu obrazu */
+}
+
+.img img:hover {
+  transform: scale(1.05);
+}
+
+
+.title {
+  text-align: center;
+  font-size: 25px; /* Rozmiar czcionki */
+  margin-top: 10px; /* Odległość od góry */
+}
+
+.data {
+  text-align: center;
+  font-size: 14px; /* Rozmiar czcionki */
+  color: #888; /* Kolor tekstu */
+}
+
+.like-share {
+  margin-top: 15px; /* Odległość od góry */
+  display: flex; /* Flexbox */
+  justify-content: space-between; /* Rozłożenie przestrzeni między elementami */
+  align-items: center; /* Wycentrowanie w pionie */
+}
+
+button.emoticon,
+button.share {
+  background-color: rgba(225, 222, 207, 0.8); /* Przezroczyste tło */
+  border: none; /* Brak obramowania */
+  font-size: 2rem; /* Rozmiar czcionki */
+  cursor: pointer; /* Kursor wskazujący */
+  transition: transform 0.3s, font-size 0.3s, padding 0.3s; /* Animacja */
+  padding: 10px; /* Wewnętrzny odstęp */
+  border-radius: 8px; /* Zaokrąglenie rogów */
+  flex: 1; /* Elastyczny rozmiar */
+  margin-right: 5px; /* Odległość od prawej strony */
+}
+
+button.emoticon.clicked {
+  transform: rotate(360deg); /* Obrót po kliknięciu */
+  font-size: 2.5rem; /* Powiększenie czcionki */
+  padding: 12px; /* Wewnętrzny odstęp */
+}
+
+button.share:hover,
+button.emoticon:hover {
+  font-size: 2.5rem; /* Powiększenie czcionki */
+  padding: 25px;
+}
+
+/*! MESSAGE*/
+.message {
+  background-color: rgba(255, 252, 241, 0.8);
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  top: 230px;
+  width: 430px;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Dodanie cienia dla lepszego wyglądu */
+  display: flex;
+  flex-direction: column; /* Użycie flexboxa do ustawienia elementów w kolumnie */
+}
+
+.message-header {
+  background-color: rgb(201, 167, 140);
+  border-radius: 25px 25px 0 0; /* Tylko górne rogi zaokrąglone */
+  text-align: center;
+  display: flex; /* Użycie flexboxa do centrowania tekstu */
+  justify-content: center;
+  align-items: center;
+  height: 46px;
+  font-size: 25px;
+  padding: 3px 0; /* Dodanie paddingu do elementu nagłówka */
+}
+
+.message-header p {
+  margin: 0;
+  font-family: "Playwrite US Modern", cursive;
+}
+
+.messages {
+  flex: 1; /* Zajmowanie dostępnej przestrzeni przez wiadomości */
+  padding: 10px; /* Dodanie paddingu wokół wiadomości */
+  overflow-y: auto; /* Dodanie przewijania, jeśli zawartość jest za długa */
+}
+
+.users-messages {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 5px 0; /* Dodanie marginesu między wiadomościami */
+  font-size: 25px;
+}
+
+.send {
+  background-color: rgb(201, 167, 140);
+  padding: 10px; /* Dodanie paddingu wokół pola tekstowego i przycisku */
+  display: flex; /* Użycie flexboxa do ustawienia elementów w rzędzie */
+  justify-content: space-between; /* Ustawienie elementów na końcach */
+  align-items: center; /* Wycentrowanie elementów pionowo */
+  border-top: 1px solid rgb(175, 146, 122); /* Dodanie obramowania na górze */
+  border-radius: 0 0 25px 25px; /* Zaokrąglenie dolnych rogów */
+}
+
+.message-bar {
+  flex: 1; /* Zajmowanie dostępnej przestrzeni przez pole tekstowe */
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(201, 167, 140);
+  margin-right: 10px;
+  font-family: "Playwrite US Modern", cursive;
+}
+
+.send-button, .message-bar {
+  display: inline-block;
+  vertical-align: middle; /* Zapewnia wyrównanie pionowe */
+}
+
+.send-button {
+  background-color: rgb(175, 146, 122);
+  border: none;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.send-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.send-button:hover {
+  box-shadow: 3px 3px 5px black;
+}
