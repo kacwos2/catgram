@@ -1,0 +1,197 @@
+body {
+  background-image: url('1600w-JM-eZxiL-W0.webp');
+}
+
+.notification {
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 150px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  background-color: rgb(241, 226, 206);
+  width: 100%;
+  height: 110px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ustawienie wysokiego z-indexu, jeśli to konieczne */
+  border-bottom: 1px solid rgb(141, 126, 106);
+}
+
+.left {
+  width: 350px;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.header-center {
+  display: flex;
+  margin-left: 0px;
+  margin-right: 0px;
+  min-width: 400px;
+  max-width: 500px;
+  align-items: center;
+  background-color: rgb(201, 167, 140);
+  border-radius: 15px;
+  height: 100px;
+  margin-top: 5px;
+  transition: 0.4s;
+}
+
+.right {
+  width: 350px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.profile {
+  background-color: rgb(201, 167, 140);
+  width: 80px;
+  height: 80px;
+  border-radius: 25%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 25px;
+  margin-right: 15px;
+  font-size: 2rem;
+  transition: 0.4s;
+}
+
+.favorite {
+  background-color: rgb(201, 167, 140);
+  width: 80px;
+  height: 80px;
+  border-radius: 25%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 15px;
+  font-size: 2rem;
+  transition: 0.4s;
+}
+
+.upload {
+  background-color: rgb(201, 167, 140);
+  width: 80px;
+  height: 80px;
+  border-radius: 25%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 15px;
+  font-size: 2rem;
+  transition: 0.4s;
+}
+
+.logo {
+  font-family: "Playwrite US Modern", cursive;
+  font-size: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Ustalamy wysokość dla centrowania pionowego */
+  margin: 103px; /* Resetujemy margines, jeśli to konieczne */
+  padding: 0; /* Resetujemy padding, jeśli to konieczne */
+}
+
+.search {
+  width: 256px; /* Szerokość search + 2 * padding 3px */
+  height: 61px; /* Wysokość search + 2 * padding 3px */
+  padding: 3px;
+  border-radius: 20px;
+  background-color: rgb(141, 126, 106);
+  margin-left: 20px;
+  box-sizing: border-box;
+  transition: width 0.4s, height 0.4s; /* Dodanie animacji przejścia */
+}
+
+.search:hover {
+  width: 276px; /* Powiększenie o 20px */
+  height: 81px; /* Powiększenie o 20px */
+}
+
+.search-bar {
+  width: 250px;
+  height: 55px;
+  border-radius: 18px;
+  border: none;
+  font-size: 25px;
+  text-align: center;
+  transition: width 0.4s, height 0.4s; /* Dodanie animacji przejścia */
+}
+
+.search-bar:hover {
+  width: 270px; /* Powiększenie o 20px */
+  height: 75px; /* Powiększenie o 20px */
+}
+
+.search-button {
+  height: 55px;
+  width: 55px;
+  border-radius: 20px;
+  border-width: 0px;
+  background-color: rgb(201, 167, 140);
+  margin-right: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.header-center:hover, .search-button:hover, .profile:hover, .favorite:hover, .upload:hover {
+  box-shadow: 5px 5px 10px black;
+}
+
+.header-center:hover {
+  transform: scale(1.1);
+}
+
+.profile,
+.favorite,
+.upload {
+  display: inline-block; /* Aby tooltip wyświetlał się pod <p> */
+  margin-right: 10px; /* Dla odstępu między elementami */
+  text-align: center;
+}
+
+.profile p,
+.favorite p,
+.upload p {
+  font-size: 2rem; /* Dla emoji */
+  cursor: pointer;
+  margin-bottom: -13px;
+  margin-top: 13px;
+}
+
+.profile span,
+.favorite span,
+.upload span {
+  font-family: "Playwrite US Modern", cursive;
+  font-size: 15px; /* Dla emoji */
+  cursor: pointer;
+}
+
+.tip {
+  background-color: rgb(201, 167, 140);
+  border-radius: 0px;
+  border: 0px;
+}

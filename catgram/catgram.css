@@ -120,6 +120,12 @@
   transition: 0.4s;
 }
 
+.tip {
+  background-color: rgb(201, 167, 140);
+  border-radius: 0px;
+  border: 0px;
+}
+
 .logo {
   font-family: "Playwrite US Modern", cursive;
   font-size: 55px;
