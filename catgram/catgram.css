@@ -75,6 +75,7 @@
 }
 
 .profile {
+  font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(201, 167, 140);
   width: 80px;
   height: 80px;
@@ -91,6 +92,7 @@
 }
 
 .favorite {
+  font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(201, 167, 140);
   width: 80px;
   height: 80px;
@@ -106,6 +108,7 @@
 }
 
 .upload {
+  font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(201, 167, 140);
   width: 80px;
   height: 80px;
